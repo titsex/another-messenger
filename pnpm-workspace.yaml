@@ -1,0 +1,5 @@
+packages:
+  - services/**/*
+  - shared/**/*
+onlyBuiltDependencies:
+  - '@bufbuild/buf'

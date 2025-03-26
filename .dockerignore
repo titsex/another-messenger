@@ -1,0 +1,5 @@
+node_modules
+.idea
+.husky
+shared/proto/generated
+shared/proto/docs

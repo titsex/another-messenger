@@ -1,0 +1,21 @@
+{
+	"name": "another-messenger",
+	"description": "",
+	"author": "titsex",
+	"license": "MIT",
+	"packageManager": "pnpm@10.7.0",
+	"scripts": {
+		"postinstall": "go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest && pnpm buf:generate",
+		"build": "pnpm --recursive --stream build",
+		"format": "biome format . --write",
+		"lint": "biome lint . --write",
+		"buf:generate": "buf generate",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@bufbuild/buf": "^1.50.1",
+		"@bufbuild/protoc-gen-es": "^2.2.5",
+		"husky": "^9.1.7"
+	}
+}

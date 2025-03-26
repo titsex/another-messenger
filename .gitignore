@@ -1,0 +1,5 @@
+node_modules
+.idea
+
+shared/proto/generated
+shared/proto/docs
