@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: user.proto
 
-package user
+package userpb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -86,11 +86,11 @@ var File_user_proto protoreflect.FileDescriptor
 const file_user_proto_rawDesc = "" +
 	"\n" +
 	"\n" +
-	"user.proto\x12\x04user\"@\n" +
+	"user.proto\x12\x06userpb\"@\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05emailBIZGgithub.com/titsex/another-messenger/shared/proto/generated/go/user;userb\x06proto3"
+	"\x05email\x18\x03 \x01(\tR\x05emailBFZDgithub.com/titsex/another-messenger/shared/proto/generated/go;userpbb\x06proto3"
 
 var (
 	file_user_proto_rawDescOnce sync.Once
@@ -106,7 +106,7 @@ func file_user_proto_rawDescGZIP() []byte {
 
 var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_user_proto_goTypes = []any{
-	(*User)(nil), // 0: user.User
+	(*User)(nil), // 0: userpb.User
 }
 var file_user_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

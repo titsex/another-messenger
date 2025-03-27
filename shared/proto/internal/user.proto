@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package user;
+package userpb;
 
-option go_package = "github.com/titsex/another-messenger/shared/proto/generated/go/user;user";
+option go_package = "github.com/titsex/another-messenger/shared/proto/generated/go;userpb";
 
 message User {
   string id = 1;
