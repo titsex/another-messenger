@@ -2,45 +2,48 @@
 // @generated from file user/v1/user.proto (package user.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv1";
-import type { Message } from "@bufbuild/protobuf";
+import type { GenFile, GenMessage } from '@bufbuild/protobuf/codegenv1'
+import { fileDesc, messageDesc } from '@bufbuild/protobuf/codegenv1'
+import type { Message } from '@bufbuild/protobuf'
 
 /**
  * Describes the file user/v1/user.proto.
  */
-export const file_user_v1_user: GenFile = /*@__PURE__*/
-  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiPAoEVXNlchIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg0KBWVtYWlsGAMgASgJEgsKA2FiYxgEIAEoCUJOWkxnaXRodWIuY29tL3RpdHNleC9hbm90aGVyLW1lc3Nlbmdlci9zaGFyZWQvcHJvdG8vZ2VuZXJhdGVkL2dvL3VzZXIvdjE7dXNlcnBiYgZwcm90bzM");
+export const file_user_v1_user: GenFile =
+	/*@__PURE__*/
+	fileDesc(
+		'ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiPAoEVXNlchIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg0KBWVtYWlsGAMgASgJEgsKA2FiYxgEIAEoCUJOWkxnaXRodWIuY29tL3RpdHNleC9hbm90aGVyLW1lc3Nlbmdlci9zaGFyZWQvcHJvdG8vZ2VuZXJhdGVkL2dvL3VzZXIvdjE7dXNlcnBiYgZwcm90bzM'
+	)
 
 /**
  * @generated from message user.v1.User
  */
-export type User = Message<"user.v1.User"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
+export type User = Message<'user.v1.User'> & {
+	/**
+	 * @generated from field: string id = 1;
+	 */
+	id: string
 
-  /**
-   * @generated from field: string name = 2;
-   */
-  name: string;
+	/**
+	 * @generated from field: string name = 2;
+	 */
+	name: string
 
-  /**
-   * @generated from field: string email = 3;
-   */
-  email: string;
+	/**
+	 * @generated from field: string email = 3;
+	 */
+	email: string
 
-  /**
-   * @generated from field: string abc = 4;
-   */
-  abc: string;
-};
+	/**
+	 * @generated from field: string abc = 4;
+	 */
+	abc: string
+}
 
 /**
  * Describes the message user.v1.User.
  * Use `create(UserSchema)` to create a new message.
  */
-export const UserSchema: GenMessage<User> = /*@__PURE__*/
-  messageDesc(file_user_v1_user, 0);
-
+export const UserSchema: GenMessage<User> =
+	/*@__PURE__*/
+	messageDesc(file_user_v1_user, 0)
