@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file user/v1/user.proto.
  */
 export const file_user_v1_user: GenFile = /*@__PURE__*/
-  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiLwoEVXNlchIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg0KBWVtYWlsGAMgASgJQk5aTGdpdGh1Yi5jb20vdGl0c2V4L2Fub3RoZXItbWVzc2VuZ2VyL3NoYXJlZC9wcm90by9nZW5lcmF0ZWQvZ28vdXNlci92MTt1c2VycGJiBnByb3RvMw");
+  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiPAoEVXNlchIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg0KBWVtYWlsGAMgASgJEgsKA2FiYxgEIAEoCUJOWkxnaXRodWIuY29tL3RpdHNleC9hbm90aGVyLW1lc3Nlbmdlci9zaGFyZWQvcHJvdG8vZ2VuZXJhdGVkL2dvL3VzZXIvdjE7dXNlcnBiYgZwcm90bzM");
 
 /**
  * @generated from message user.v1.User
@@ -30,6 +30,11 @@ export type User = Message<"user.v1.User"> & {
    * @generated from field: string email = 3;
    */
   email: string;
+
+  /**
+   * @generated from field: string abc = 4;
+   */
+  abc: string;
 };
 
 /**

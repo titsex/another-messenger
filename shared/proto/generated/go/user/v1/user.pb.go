@@ -26,6 +26,7 @@ type User struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	Abc           string                 `protobuf:"bytes,4,opt,name=abc,proto3" json:"abc,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -81,15 +82,23 @@ func (x *User) GetEmail() string {
 	return ""
 }
 
+func (x *User) GetAbc() string {
+	if x != nil {
+		return x.Abc
+	}
+	return ""
+}
+
 var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\"@\n" +
+	"\x12user/v1/user.proto\x12\auser.v1\"R\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05emailBNZLgithub.com/titsex/another-messenger/shared/proto/generated/go/user/v1;userpbb\x06proto3"
+	"\x05email\x18\x03 \x01(\tR\x05email\x12\x10\n" +
+	"\x03abc\x18\x04 \x01(\tR\x03abcBNZLgithub.com/titsex/another-messenger/shared/proto/generated/go/user/v1;userpbb\x06proto3"
 
 var (
 	file_user_v1_user_proto_rawDescOnce sync.Once
