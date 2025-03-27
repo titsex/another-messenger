@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file user.proto.
  */
 export const file_user: GenFile = /*@__PURE__*/
-  fileDesc("Cgp1c2VyLnByb3RvEgZ1c2VycGIiLwoEVXNlchIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg0KBWVtYWlsGAMgASgJQkZaRGdpdGh1Yi5jb20vdGl0c2V4L2Fub3RoZXItbWVzc2VuZ2VyL3NoYXJlZC9wcm90by9nZW5lcmF0ZWQvZ287dXNlcnBiYgZwcm90bzM");
+  fileDesc("Cgp1c2VyLnByb3RvEgZ1c2VycGIiLwoEVXNlchIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg0KBWVtYWlsGAMgASgJQk1aS2dpdGh1Yi5jb20vdGl0c2V4L2Fub3RoZXItbWVzc2VuZ2VyL3NoYXJlZC9wcm90by9nZW5lcmF0ZWQvZ28vdXNlcnBiO3VzZXJwYmIGcHJvdG8z");
 
 /**
  * @generated from message userpb.User

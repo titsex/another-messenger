@@ -10,5 +10,6 @@ plugins:
     out: shared/proto/generated/docs
 
   - local: protoc-gen-go
-    out: shared/proto/generated/go
-    opt: paths=source_relative
+    out: .
+    opt:
+      - module=github.com/titsex/another-messenger
