@@ -3,3 +3,4 @@ packages:
   - shared/**/*
 onlyBuiltDependencies:
   - '@bufbuild/buf'
+  - '@biomejs/biome'
