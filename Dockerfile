@@ -12,12 +12,13 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@10.7.0 --activate
 
-COPY package.json pnpm-lock.yaml buf.gen.yaml ./
+WORKDIR /application
 
+COPY scripts/* ./scripts/
+RUN chmod +x ./scripts/*
+
+COPY package.json pnpm-lock.yaml ./
+COPY shared/proto shared/proto/
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-COPY . .
-
-RUN pnpm buf:generate
-
-WORKDIR /application
+ENTRYPOINT ["/bin/bash", "-c", "while true; do sleep 1; done"]

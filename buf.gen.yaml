@@ -1,9 +1,0 @@
-version: v2
-inputs:
-  - directory: shared/proto
-plugins:
-  - local: protoc-gen-es
-    out: shared/proto/generated
-    opt: target=ts
-  - local: protoc-gen-doc
-    out: shared/proto/docs

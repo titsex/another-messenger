@@ -1,0 +1,14 @@
+version: v2
+inputs:
+  - directory: shared/proto/internal
+plugins:
+  - local: protoc-gen-es
+    out: shared/proto/generated/ts
+    opt: target=ts
+
+  - local: protoc-gen-doc
+    out: shared/proto/generated/docs
+
+  - local: protoc-gen-go
+    out: shared/proto/generated/go
+    opt: paths=source_relative
