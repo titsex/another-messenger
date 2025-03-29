@@ -1,0 +1,5 @@
+config/app.yaml
+config/database.yaml
+.env
+tmp
+users.exe

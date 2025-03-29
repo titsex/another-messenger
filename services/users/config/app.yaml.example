@@ -1,0 +1,15 @@
+# app.yaml.example
+# Rename this file to 'app.yaml' and configure the values according to your needs.
+
+app_name: "users"
+port: 3000
+
+log_level: 1
+# 0 - DebugLevel (debugging information)
+# 1 - InfoLevel (informational messages)
+# 2 - WarnLevel (warnings about possible issues)
+# 3 - ErrorLevel (error messages)
+# 4 - FatalLevel (fatal errors causing shutdown)
+# 5 - PanicLevel (panic state)
+# -1 - TraceLevel (very detailed tracing information)
+# Values greater than 5 are treated as Disabled.

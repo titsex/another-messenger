@@ -1,0 +1,11 @@
+{
+	"name": "@services/users",
+	"description": "[GO] User Service",
+	"author": "titsex",
+	"license": "MIT",
+	"scripts": {
+		"build": "go build -o users.exe ./cmd/users",
+		"start": "users.exe",
+		"dev": "air"
+	}
+}

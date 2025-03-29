@@ -1,0 +1,14 @@
+# database.yaml.example
+# Rename this file to 'database.yaml' and configure the values according to your needs.
+
+host: "localhost"
+port: 5432
+user: "postgres"
+password: "postgres"
+name: "another-messenger-users"
+
+log_level: 4 # Available log levels:
+# 1 - SILENT (disable logging)
+# 2 - ERROR (only errors)
+# 3 - WARN (warnings and errors)
+# 4 - INFO (info messages, warnings, and errors)
