@@ -1,6 +1,7 @@
 packages:
   - services/**/*
   - shared/**/*
+
 onlyBuiltDependencies:
   - '@bufbuild/buf'
   - '@biomejs/biome'

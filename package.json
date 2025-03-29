@@ -1,6 +1,6 @@
 {
 	"name": "another-messenger",
-	"description": "",
+	"description": "Another messenger, purely as a pet project",
 	"author": "titsex",
 	"license": "MIT",
 	"packageManager": "pnpm@10.7.0",
@@ -10,6 +10,8 @@
 	"scripts": {
 		"postinstall": "pnpm install-proto-deps && pnpm buf:generate",
 		"build": "pnpm --recursive --stream build",
+		"start": "pnpm --recursive --stream start",
+		"dev": "pnpm --recursive --stream dev",
 		"format": "biome format . --write",
 		"lint": "biome lint . --write",
 		"install-proto-deps": "node scripts/install-proto-deps.js",
