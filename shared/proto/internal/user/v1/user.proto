@@ -4,9 +4,42 @@ package user.v1;
 
 option go_package = "github.com/titsex/another-messenger/shared/proto/generated/go/user/v1;userpb";
 
+enum Role {
+  USER = 0;
+  BOT = 1;
+  MODERATOR = 2;
+  DEVELOPER = 3;
+}
+
+enum Type {
+  NORMAL = 0;
+  SPAMMER = 1;
+  SCAMMER = 2;
+}
+
+enum Status {
+  HIDDEN = 0;
+  ONLINE = 1;
+  OFFLINE = 2;
+}
+
 message User {
   string id = 1;
   string name = 2;
-  string email = 3;
-  string abc = 4;
+  string username = 3;
+  string email = 4;
+  string password_hash = 5;
+  int64 created_at = 6;
+  int64 updated_at = 7;
+  bool is_banned = 16;
+
+  Role role = 9;
+  Type type = 10;
+  Status status = 11;
+
+  optional int64 deleted_at = 8;
+  optional string bio = 12;
+  optional string phone = 13;
+  optional string avatar_url = 14;
+  optional int64 last_seen_at = 15;
 }
