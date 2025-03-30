@@ -21,12 +21,174 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type Role int32
+
+const (
+	Role_USER      Role = 0
+	Role_BOT       Role = 1
+	Role_MODERATOR Role = 2
+	Role_DEVELOPER Role = 3
+)
+
+// Enum value maps for Role.
+var (
+	Role_name = map[int32]string{
+		0: "USER",
+		1: "BOT",
+		2: "MODERATOR",
+		3: "DEVELOPER",
+	}
+	Role_value = map[string]int32{
+		"USER":      0,
+		"BOT":       1,
+		"MODERATOR": 2,
+		"DEVELOPER": 3,
+	}
+)
+
+func (x Role) Enum() *Role {
+	p := new(Role)
+	*p = x
+	return p
+}
+
+func (x Role) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Role) Descriptor() protoreflect.EnumDescriptor {
+	return file_user_v1_user_proto_enumTypes[0].Descriptor()
+}
+
+func (Role) Type() protoreflect.EnumType {
+	return &file_user_v1_user_proto_enumTypes[0]
+}
+
+func (x Role) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Role.Descriptor instead.
+func (Role) EnumDescriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{0}
+}
+
+type Type int32
+
+const (
+	Type_NORMAL  Type = 0
+	Type_SPAMMER Type = 1
+	Type_SCAMMER Type = 2
+)
+
+// Enum value maps for Type.
+var (
+	Type_name = map[int32]string{
+		0: "NORMAL",
+		1: "SPAMMER",
+		2: "SCAMMER",
+	}
+	Type_value = map[string]int32{
+		"NORMAL":  0,
+		"SPAMMER": 1,
+		"SCAMMER": 2,
+	}
+)
+
+func (x Type) Enum() *Type {
+	p := new(Type)
+	*p = x
+	return p
+}
+
+func (x Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_user_v1_user_proto_enumTypes[1].Descriptor()
+}
+
+func (Type) Type() protoreflect.EnumType {
+	return &file_user_v1_user_proto_enumTypes[1]
+}
+
+func (x Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Type.Descriptor instead.
+func (Type) EnumDescriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{1}
+}
+
+type Status int32
+
+const (
+	Status_HIDDEN  Status = 0
+	Status_ONLINE  Status = 1
+	Status_OFFLINE Status = 2
+)
+
+// Enum value maps for Status.
+var (
+	Status_name = map[int32]string{
+		0: "HIDDEN",
+		1: "ONLINE",
+		2: "OFFLINE",
+	}
+	Status_value = map[string]int32{
+		"HIDDEN":  0,
+		"ONLINE":  1,
+		"OFFLINE": 2,
+	}
+)
+
+func (x Status) Enum() *Status {
+	p := new(Status)
+	*p = x
+	return p
+}
+
+func (x Status) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Status) Descriptor() protoreflect.EnumDescriptor {
+	return file_user_v1_user_proto_enumTypes[2].Descriptor()
+}
+
+func (Status) Type() protoreflect.EnumType {
+	return &file_user_v1_user_proto_enumTypes[2]
+}
+
+func (x Status) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Status.Descriptor instead.
+func (Status) EnumDescriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{2}
+}
+
 type User struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
-	Abc           string                 `protobuf:"bytes,4,opt,name=abc,proto3" json:"abc,omitempty"`
+	Username      string                 `protobuf:"bytes,3,opt,name=username,proto3" json:"username,omitempty"`
+	Email         string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
+	PasswordHash  string                 `protobuf:"bytes,5,opt,name=password_hash,json=passwordHash,proto3" json:"password_hash,omitempty"`
+	CreatedAt     int64                  `protobuf:"varint,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     int64                  `protobuf:"varint,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	IsBanned      bool                   `protobuf:"varint,16,opt,name=is_banned,json=isBanned,proto3" json:"is_banned,omitempty"`
+	Role          Role                   `protobuf:"varint,9,opt,name=role,proto3,enum=user.v1.Role" json:"role,omitempty"`
+	Type          Type                   `protobuf:"varint,10,opt,name=type,proto3,enum=user.v1.Type" json:"type,omitempty"`
+	Status        Status                 `protobuf:"varint,11,opt,name=status,proto3,enum=user.v1.Status" json:"status,omitempty"`
+	DeletedAt     *int64                 `protobuf:"varint,8,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
+	Bio           *string                `protobuf:"bytes,12,opt,name=bio,proto3,oneof" json:"bio,omitempty"`
+	Phone         *string                `protobuf:"bytes,13,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
+	AvatarUrl     *string                `protobuf:"bytes,14,opt,name=avatar_url,json=avatarUrl,proto3,oneof" json:"avatar_url,omitempty"`
+	LastSeenAt    *int64                 `protobuf:"varint,15,opt,name=last_seen_at,json=lastSeenAt,proto3,oneof" json:"last_seen_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -75,6 +237,13 @@ func (x *User) GetName() string {
 	return ""
 }
 
+func (x *User) GetUsername() string {
+	if x != nil {
+		return x.Username
+	}
+	return ""
+}
+
 func (x *User) GetEmail() string {
 	if x != nil {
 		return x.Email
@@ -82,23 +251,139 @@ func (x *User) GetEmail() string {
 	return ""
 }
 
-func (x *User) GetAbc() string {
+func (x *User) GetPasswordHash() string {
 	if x != nil {
-		return x.Abc
+		return x.PasswordHash
 	}
 	return ""
+}
+
+func (x *User) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *User) GetUpdatedAt() int64 {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return 0
+}
+
+func (x *User) GetIsBanned() bool {
+	if x != nil {
+		return x.IsBanned
+	}
+	return false
+}
+
+func (x *User) GetRole() Role {
+	if x != nil {
+		return x.Role
+	}
+	return Role_USER
+}
+
+func (x *User) GetType() Type {
+	if x != nil {
+		return x.Type
+	}
+	return Type_NORMAL
+}
+
+func (x *User) GetStatus() Status {
+	if x != nil {
+		return x.Status
+	}
+	return Status_HIDDEN
+}
+
+func (x *User) GetDeletedAt() int64 {
+	if x != nil && x.DeletedAt != nil {
+		return *x.DeletedAt
+	}
+	return 0
+}
+
+func (x *User) GetBio() string {
+	if x != nil && x.Bio != nil {
+		return *x.Bio
+	}
+	return ""
+}
+
+func (x *User) GetPhone() string {
+	if x != nil && x.Phone != nil {
+		return *x.Phone
+	}
+	return ""
+}
+
+func (x *User) GetAvatarUrl() string {
+	if x != nil && x.AvatarUrl != nil {
+		return *x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *User) GetLastSeenAt() int64 {
+	if x != nil && x.LastSeenAt != nil {
+		return *x.LastSeenAt
+	}
+	return 0
 }
 
 var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\"R\n" +
+	"\x12user/v1/user.proto\x12\auser.v1\"\xad\x04\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05email\x12\x10\n" +
-	"\x03abc\x18\x04 \x01(\tR\x03abcBNZLgithub.com/titsex/another-messenger/shared/proto/generated/go/user/v1;userpbb\x06proto3"
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1a\n" +
+	"\busername\x18\x03 \x01(\tR\busername\x12\x14\n" +
+	"\x05email\x18\x04 \x01(\tR\x05email\x12#\n" +
+	"\rpassword_hash\x18\x05 \x01(\tR\fpasswordHash\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x06 \x01(\x03R\tcreatedAt\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\a \x01(\x03R\tupdatedAt\x12\x1b\n" +
+	"\tis_banned\x18\x10 \x01(\bR\bisBanned\x12!\n" +
+	"\x04role\x18\t \x01(\x0e2\r.user.v1.RoleR\x04role\x12!\n" +
+	"\x04type\x18\n" +
+	" \x01(\x0e2\r.user.v1.TypeR\x04type\x12'\n" +
+	"\x06status\x18\v \x01(\x0e2\x0f.user.v1.StatusR\x06status\x12\"\n" +
+	"\n" +
+	"deleted_at\x18\b \x01(\x03H\x00R\tdeletedAt\x88\x01\x01\x12\x15\n" +
+	"\x03bio\x18\f \x01(\tH\x01R\x03bio\x88\x01\x01\x12\x19\n" +
+	"\x05phone\x18\r \x01(\tH\x02R\x05phone\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"avatar_url\x18\x0e \x01(\tH\x03R\tavatarUrl\x88\x01\x01\x12%\n" +
+	"\flast_seen_at\x18\x0f \x01(\x03H\x04R\n" +
+	"lastSeenAt\x88\x01\x01B\r\n" +
+	"\v_deleted_atB\x06\n" +
+	"\x04_bioB\b\n" +
+	"\x06_phoneB\r\n" +
+	"\v_avatar_urlB\x0f\n" +
+	"\r_last_seen_at*7\n" +
+	"\x04Role\x12\b\n" +
+	"\x04USER\x10\x00\x12\a\n" +
+	"\x03BOT\x10\x01\x12\r\n" +
+	"\tMODERATOR\x10\x02\x12\r\n" +
+	"\tDEVELOPER\x10\x03*,\n" +
+	"\x04Type\x12\n" +
+	"\n" +
+	"\x06NORMAL\x10\x00\x12\v\n" +
+	"\aSPAMMER\x10\x01\x12\v\n" +
+	"\aSCAMMER\x10\x02*-\n" +
+	"\x06Status\x12\n" +
+	"\n" +
+	"\x06HIDDEN\x10\x00\x12\n" +
+	"\n" +
+	"\x06ONLINE\x10\x01\x12\v\n" +
+	"\aOFFLINE\x10\x02BNZLgithub.com/titsex/another-messenger/shared/proto/generated/go/user/v1;userpbb\x06proto3"
 
 var (
 	file_user_v1_user_proto_rawDescOnce sync.Once
@@ -112,16 +397,23 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_user_v1_user_proto_rawDescData
 }
 
+var file_user_v1_user_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_user_v1_user_proto_goTypes = []any{
-	(*User)(nil), // 0: user.v1.User
+	(Role)(0),    // 0: user.v1.Role
+	(Type)(0),    // 1: user.v1.Type
+	(Status)(0),  // 2: user.v1.Status
+	(*User)(nil), // 3: user.v1.User
 }
 var file_user_v1_user_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0, // 0: user.v1.User.role:type_name -> user.v1.Role
+	1, // 1: user.v1.User.type:type_name -> user.v1.Type
+	2, // 2: user.v1.User.status:type_name -> user.v1.Status
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_user_v1_user_proto_init() }
@@ -129,18 +421,20 @@ func file_user_v1_user_proto_init() {
 	if File_user_v1_user_proto != nil {
 		return
 	}
+	file_user_v1_user_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      3,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_user_v1_user_proto_goTypes,
 		DependencyIndexes: file_user_v1_user_proto_depIdxs,
+		EnumInfos:         file_user_v1_user_proto_enumTypes,
 		MessageInfos:      file_user_v1_user_proto_msgTypes,
 	}.Build()
 	File_user_v1_user_proto = out.File
