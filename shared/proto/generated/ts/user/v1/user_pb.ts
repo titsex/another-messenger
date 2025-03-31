@@ -2,188 +2,417 @@
 // @generated from file user/v1/user.proto (package user.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenEnum, GenFile, GenMessage } from '@bufbuild/protobuf/codegenv1'
-import { enumDesc, fileDesc, messageDesc } from '@bufbuild/protobuf/codegenv1'
-import type { Message } from '@bufbuild/protobuf'
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import { enumDesc, fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv1";
+import type { EmptySchema } from "@bufbuild/protobuf/wkt";
+import { file_google_protobuf_empty } from "@bufbuild/protobuf/wkt";
+import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file user/v1/user.proto.
  */
-export const file_user_v1_user: GenFile =
-	/*@__PURE__*/
-	fileDesc(
-		'ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiogMKBFVzZXISCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIQCgh1c2VybmFtZRgDIAEoCRINCgVlbWFpbBgEIAEoCRIVCg1wYXNzd29yZF9oYXNoGAUgASgJEhIKCmNyZWF0ZWRfYXQYBiABKAMSEgoKdXBkYXRlZF9hdBgHIAEoAxIRCglpc19iYW5uZWQYECABKAgSGwoEcm9sZRgJIAEoDjINLnVzZXIudjEuUm9sZRIbCgR0eXBlGAogASgOMg0udXNlci52MS5UeXBlEh8KBnN0YXR1cxgLIAEoDjIPLnVzZXIudjEuU3RhdHVzEhcKCmRlbGV0ZWRfYXQYCCABKANIAIgBARIQCgNiaW8YDCABKAlIAYgBARISCgVwaG9uZRgNIAEoCUgCiAEBEhcKCmF2YXRhcl91cmwYDiABKAlIA4gBARIZCgxsYXN0X3NlZW5fYXQYDyABKANIBIgBAUINCgtfZGVsZXRlZF9hdEIGCgRfYmlvQggKBl9waG9uZUINCgtfYXZhdGFyX3VybEIPCg1fbGFzdF9zZWVuX2F0KjcKBFJvbGUSCAoEVVNFUhAAEgcKA0JPVBABEg0KCU1PREVSQVRPUhACEg0KCURFVkVMT1BFUhADKiwKBFR5cGUSCgoGTk9STUFMEAASCwoHU1BBTU1FUhABEgsKB1NDQU1NRVIQAiotCgZTdGF0dXMSCgoGSElEREVOEAASCgoGT05MSU5FEAESCwoHT0ZGTElORRACQk5aTGdpdGh1Yi5jb20vdGl0c2V4L2Fub3RoZXItbWVzc2VuZ2VyL3NoYXJlZC9wcm90by9nZW5lcmF0ZWQvZ28vdXNlci92MTt1c2VycGJiBnByb3RvMw'
-	)
+export const file_user_v1_user: GenFile = /*@__PURE__*/
+  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiqgMKBFVzZXISCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIQCgh1c2VybmFtZRgDIAEoCRINCgVlbWFpbBgEIAEoCRIVCg1wYXNzd29yZF9oYXNoGAUgASgJEhIKCmNyZWF0ZWRfYXQYBiABKAMSEgoKdXBkYXRlZF9hdBgHIAEoAxIRCglpc19iYW5uZWQYECABKAgSGwoEcm9sZRgJIAEoDjINLnVzZXIudjEuUm9sZRIfCgR0eXBlGAogASgOMhEudXNlci52MS5Vc2VyVHlwZRIjCgZzdGF0dXMYCyABKA4yEy51c2VyLnYxLlVzZXJTdGF0dXMSFwoKZGVsZXRlZF9hdBgIIAEoA0gAiAEBEhAKA2JpbxgMIAEoCUgBiAEBEhIKBXBob25lGA0gASgJSAKIAQESFwoKYXZhdGFyX3VybBgOIAEoCUgDiAEBEhkKDGxhc3Rfc2Vlbl9hdBgPIAEoA0gEiAEBQg0KC19kZWxldGVkX2F0QgYKBF9iaW9CCAoGX3Bob25lQg0KC19hdmF0YXJfdXJsQg8KDV9sYXN0X3NlZW5fYXQiIQoOR2V0VXNlclJlcXVlc3QSDwoHdXNlcl9pZBgBIAEoCSLUAQoUVXBkYXRlUHJvZmlsZVJlcXVlc3QSEQoEbmFtZRgBIAEoCUgAiAEBEhUKCHVzZXJuYW1lGAIgASgJSAGIAQESEgoFZW1haWwYAyABKAlIAogBARIQCgNiaW8YBCABKAlIA4gBARISCgVwaG9uZRgFIAEoCUgEiAEBEhcKCmF2YXRhcl91cmwYBiABKAlIBYgBAUIHCgVfbmFtZUILCglfdXNlcm5hbWVCCAoGX2VtYWlsQgYKBF9iaW9CCAoGX3Bob25lQg0KC19hdmF0YXJfdXJsIiMKEEJsb2NrVXNlclJlcXVlc3QSDwoHdXNlcl9pZBgBIAEoCSIyChJTZWFyY2hVc2Vyc1JlcXVlc3QSDQoFcXVlcnkYASABKAkSDQoFbGltaXQYAiABKAUiMwoTU2VhcmNoVXNlcnNSZXNwb25zZRIcCgV1c2VycxgBIAMoCzINLnVzZXIudjEuVXNlciIzCgxTdGF0dXNVcGRhdGUSIwoGc3RhdHVzGAEgASgOMhMudXNlci52MS5Vc2VyU3RhdHVzIjMKE09ubGluZVVzZXJzUmVzcG9uc2USHAoFdXNlcnMYASADKAsyDS51c2VyLnYxLlVzZXIqYQoEUm9sZRIUChBST0xFX1VOU1BFQ0lGSUVEEAASDQoJUk9MRV9VU0VSEAESDAoIUk9MRV9CT1QQAhISCg5ST0xFX01PREVSQVRPUhADEhIKDlJPTEVfREVWRUxPUEVSEAQqaQoIVXNlclR5cGUSGQoVVVNFUl9UWVBFX1VOU1BFQ0lGSUVEEAASFAoQVVNFUl9UWVBFX05PUk1BTBABEhUKEVVTRVJfVFlQRV9TUEFNTUVSEAISFQoRVVNFUl9UWVBFX1NDQU1NRVIQAypyCgpVc2VyU3RhdHVzEhsKF1VTRVJfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSVVNFUl9TVEFUVVNfSElEREVOEAESFgoSVVNFUl9TVEFUVVNfT05MSU5FEAISFwoTVVNFUl9TVEFUVVNfT0ZGTElORRADMtEDCgtVc2VyU2VydmljZRIxCgdHZXRVc2VyEhcudXNlci52MS5HZXRVc2VyUmVxdWVzdBoNLnVzZXIudjEuVXNlchI9Cg1VcGRhdGVQcm9maWxlEh0udXNlci52MS5VcGRhdGVQcm9maWxlUmVxdWVzdBoNLnVzZXIudjEuVXNlchI+CglCbG9ja1VzZXISGS51c2VyLnYxLkJsb2NrVXNlclJlcXVlc3QaFi5nb29nbGUucHJvdG9idWYuRW1wdHkSPwoNRGVsZXRlQWNjb3VudBIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRJICgtTZWFyY2hVc2VycxIbLnVzZXIudjEuU2VhcmNoVXNlcnNSZXF1ZXN0GhwudXNlci52MS5TZWFyY2hVc2Vyc1Jlc3BvbnNlEj0KDFVwZGF0ZVN0YXR1cxIVLnVzZXIudjEuU3RhdHVzVXBkYXRlGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5EkYKDkdldE9ubGluZVVzZXJzEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GhwudXNlci52MS5PbmxpbmVVc2Vyc1Jlc3BvbnNlQk5aTGdpdGh1Yi5jb20vdGl0c2V4L2Fub3RoZXItbWVzc2VuZ2VyL3NoYXJlZC9wcm90by9nZW5lcmF0ZWQvZ28vdXNlci92MTt1c2VycGJiBnByb3RvMw", [file_google_protobuf_empty]);
 
 /**
  * @generated from message user.v1.User
  */
-export type User = Message<'user.v1.User'> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string
+export type User = Message<"user.v1.User"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-	/**
-	 * @generated from field: string name = 2;
-	 */
-	name: string
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
 
-	/**
-	 * @generated from field: string username = 3;
-	 */
-	username: string
+  /**
+   * @generated from field: string username = 3;
+   */
+  username: string;
 
-	/**
-	 * @generated from field: string email = 4;
-	 */
-	email: string
+  /**
+   * @generated from field: string email = 4;
+   */
+  email: string;
 
-	/**
-	 * @generated from field: string password_hash = 5;
-	 */
-	passwordHash: string
+  /**
+   * @generated from field: string password_hash = 5;
+   */
+  passwordHash: string;
 
-	/**
-	 * @generated from field: int64 created_at = 6;
-	 */
-	createdAt: bigint
+  /**
+   * @generated from field: int64 created_at = 6;
+   */
+  createdAt: bigint;
 
-	/**
-	 * @generated from field: int64 updated_at = 7;
-	 */
-	updatedAt: bigint
+  /**
+   * @generated from field: int64 updated_at = 7;
+   */
+  updatedAt: bigint;
 
-	/**
-	 * @generated from field: bool is_banned = 16;
-	 */
-	isBanned: boolean
+  /**
+   * @generated from field: bool is_banned = 16;
+   */
+  isBanned: boolean;
 
-	/**
-	 * @generated from field: user.v1.Role role = 9;
-	 */
-	role: Role
+  /**
+   * @generated from field: user.v1.Role role = 9;
+   */
+  role: Role;
 
-	/**
-	 * @generated from field: user.v1.Type type = 10;
-	 */
-	type: Type
+  /**
+   * @generated from field: user.v1.UserType type = 10;
+   */
+  type: UserType;
 
-	/**
-	 * @generated from field: user.v1.Status status = 11;
-	 */
-	status: Status
+  /**
+   * @generated from field: user.v1.UserStatus status = 11;
+   */
+  status: UserStatus;
 
-	/**
-	 * @generated from field: optional int64 deleted_at = 8;
-	 */
-	deletedAt?: bigint
+  /**
+   * @generated from field: optional int64 deleted_at = 8;
+   */
+  deletedAt?: bigint;
 
-	/**
-	 * @generated from field: optional string bio = 12;
-	 */
-	bio?: string
+  /**
+   * @generated from field: optional string bio = 12;
+   */
+  bio?: string;
 
-	/**
-	 * @generated from field: optional string phone = 13;
-	 */
-	phone?: string
+  /**
+   * @generated from field: optional string phone = 13;
+   */
+  phone?: string;
 
-	/**
-	 * @generated from field: optional string avatar_url = 14;
-	 */
-	avatarUrl?: string
+  /**
+   * @generated from field: optional string avatar_url = 14;
+   */
+  avatarUrl?: string;
 
-	/**
-	 * @generated from field: optional int64 last_seen_at = 15;
-	 */
-	lastSeenAt?: bigint
-}
+  /**
+   * @generated from field: optional int64 last_seen_at = 15;
+   */
+  lastSeenAt?: bigint;
+};
 
 /**
  * Describes the message user.v1.User.
  * Use `create(UserSchema)` to create a new message.
  */
-export const UserSchema: GenMessage<User> =
-	/*@__PURE__*/
-	messageDesc(file_user_v1_user, 0)
+export const UserSchema: GenMessage<User> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 0);
+
+/**
+ * @generated from message user.v1.GetUserRequest
+ */
+export type GetUserRequest = Message<"user.v1.GetUserRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+};
+
+/**
+ * Describes the message user.v1.GetUserRequest.
+ * Use `create(GetUserRequestSchema)` to create a new message.
+ */
+export const GetUserRequestSchema: GenMessage<GetUserRequest> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 1);
+
+/**
+ * @generated from message user.v1.UpdateProfileRequest
+ */
+export type UpdateProfileRequest = Message<"user.v1.UpdateProfileRequest"> & {
+  /**
+   * @generated from field: optional string name = 1;
+   */
+  name?: string;
+
+  /**
+   * @generated from field: optional string username = 2;
+   */
+  username?: string;
+
+  /**
+   * @generated from field: optional string email = 3;
+   */
+  email?: string;
+
+  /**
+   * @generated from field: optional string bio = 4;
+   */
+  bio?: string;
+
+  /**
+   * @generated from field: optional string phone = 5;
+   */
+  phone?: string;
+
+  /**
+   * @generated from field: optional string avatar_url = 6;
+   */
+  avatarUrl?: string;
+};
+
+/**
+ * Describes the message user.v1.UpdateProfileRequest.
+ * Use `create(UpdateProfileRequestSchema)` to create a new message.
+ */
+export const UpdateProfileRequestSchema: GenMessage<UpdateProfileRequest> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 2);
+
+/**
+ * @generated from message user.v1.BlockUserRequest
+ */
+export type BlockUserRequest = Message<"user.v1.BlockUserRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+};
+
+/**
+ * Describes the message user.v1.BlockUserRequest.
+ * Use `create(BlockUserRequestSchema)` to create a new message.
+ */
+export const BlockUserRequestSchema: GenMessage<BlockUserRequest> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 3);
+
+/**
+ * @generated from message user.v1.SearchUsersRequest
+ */
+export type SearchUsersRequest = Message<"user.v1.SearchUsersRequest"> & {
+  /**
+   * @generated from field: string query = 1;
+   */
+  query: string;
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit: number;
+};
+
+/**
+ * Describes the message user.v1.SearchUsersRequest.
+ * Use `create(SearchUsersRequestSchema)` to create a new message.
+ */
+export const SearchUsersRequestSchema: GenMessage<SearchUsersRequest> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 4);
+
+/**
+ * @generated from message user.v1.SearchUsersResponse
+ */
+export type SearchUsersResponse = Message<"user.v1.SearchUsersResponse"> & {
+  /**
+   * @generated from field: repeated user.v1.User users = 1;
+   */
+  users: User[];
+};
+
+/**
+ * Describes the message user.v1.SearchUsersResponse.
+ * Use `create(SearchUsersResponseSchema)` to create a new message.
+ */
+export const SearchUsersResponseSchema: GenMessage<SearchUsersResponse> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 5);
+
+/**
+ * @generated from message user.v1.StatusUpdate
+ */
+export type StatusUpdate = Message<"user.v1.StatusUpdate"> & {
+  /**
+   * @generated from field: user.v1.UserStatus status = 1;
+   */
+  status: UserStatus;
+};
+
+/**
+ * Describes the message user.v1.StatusUpdate.
+ * Use `create(StatusUpdateSchema)` to create a new message.
+ */
+export const StatusUpdateSchema: GenMessage<StatusUpdate> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 6);
+
+/**
+ * @generated from message user.v1.OnlineUsersResponse
+ */
+export type OnlineUsersResponse = Message<"user.v1.OnlineUsersResponse"> & {
+  /**
+   * @generated from field: repeated user.v1.User users = 1;
+   */
+  users: User[];
+};
+
+/**
+ * Describes the message user.v1.OnlineUsersResponse.
+ * Use `create(OnlineUsersResponseSchema)` to create a new message.
+ */
+export const OnlineUsersResponseSchema: GenMessage<OnlineUsersResponse> = /*@__PURE__*/
+  messageDesc(file_user_v1_user, 7);
 
 /**
  * @generated from enum user.v1.Role
  */
 export enum Role {
-	/**
-	 * @generated from enum value: USER = 0;
-	 */
-	USER = 0,
+  /**
+   * @generated from enum value: ROLE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
 
-	/**
-	 * @generated from enum value: BOT = 1;
-	 */
-	BOT = 1,
+  /**
+   * @generated from enum value: ROLE_USER = 1;
+   */
+  USER = 1,
 
-	/**
-	 * @generated from enum value: MODERATOR = 2;
-	 */
-	MODERATOR = 2,
+  /**
+   * @generated from enum value: ROLE_BOT = 2;
+   */
+  BOT = 2,
 
-	/**
-	 * @generated from enum value: DEVELOPER = 3;
-	 */
-	DEVELOPER = 3,
+  /**
+   * @generated from enum value: ROLE_MODERATOR = 3;
+   */
+  MODERATOR = 3,
+
+  /**
+   * @generated from enum value: ROLE_DEVELOPER = 4;
+   */
+  DEVELOPER = 4,
 }
 
 /**
  * Describes the enum user.v1.Role.
  */
-export const RoleSchema: GenEnum<Role> = /*@__PURE__*/ enumDesc(file_user_v1_user, 0)
+export const RoleSchema: GenEnum<Role> = /*@__PURE__*/
+  enumDesc(file_user_v1_user, 0);
 
 /**
- * @generated from enum user.v1.Type
+ * @generated from enum user.v1.UserType
  */
-export enum Type {
-	/**
-	 * @generated from enum value: NORMAL = 0;
-	 */
-	NORMAL = 0,
+export enum UserType {
+  /**
+   * @generated from enum value: USER_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
 
-	/**
-	 * @generated from enum value: SPAMMER = 1;
-	 */
-	SPAMMER = 1,
+  /**
+   * @generated from enum value: USER_TYPE_NORMAL = 1;
+   */
+  NORMAL = 1,
 
-	/**
-	 * @generated from enum value: SCAMMER = 2;
-	 */
-	SCAMMER = 2,
+  /**
+   * @generated from enum value: USER_TYPE_SPAMMER = 2;
+   */
+  SPAMMER = 2,
+
+  /**
+   * @generated from enum value: USER_TYPE_SCAMMER = 3;
+   */
+  SCAMMER = 3,
 }
 
 /**
- * Describes the enum user.v1.Type.
+ * Describes the enum user.v1.UserType.
  */
-export const TypeSchema: GenEnum<Type> = /*@__PURE__*/ enumDesc(file_user_v1_user, 1)
+export const UserTypeSchema: GenEnum<UserType> = /*@__PURE__*/
+  enumDesc(file_user_v1_user, 1);
 
 /**
- * @generated from enum user.v1.Status
+ * @generated from enum user.v1.UserStatus
  */
-export enum Status {
-	/**
-	 * @generated from enum value: HIDDEN = 0;
-	 */
-	HIDDEN = 0,
+export enum UserStatus {
+  /**
+   * @generated from enum value: USER_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
 
-	/**
-	 * @generated from enum value: ONLINE = 1;
-	 */
-	ONLINE = 1,
+  /**
+   * @generated from enum value: USER_STATUS_HIDDEN = 1;
+   */
+  HIDDEN = 1,
 
-	/**
-	 * @generated from enum value: OFFLINE = 2;
-	 */
-	OFFLINE = 2,
+  /**
+   * @generated from enum value: USER_STATUS_ONLINE = 2;
+   */
+  ONLINE = 2,
+
+  /**
+   * @generated from enum value: USER_STATUS_OFFLINE = 3;
+   */
+  OFFLINE = 3,
 }
 
 /**
- * Describes the enum user.v1.Status.
+ * Describes the enum user.v1.UserStatus.
  */
-export const StatusSchema: GenEnum<Status> = /*@__PURE__*/ enumDesc(file_user_v1_user, 2)
+export const UserStatusSchema: GenEnum<UserStatus> = /*@__PURE__*/
+  enumDesc(file_user_v1_user, 2);
+
+/**
+ * @generated from service user.v1.UserService
+ */
+export const UserService: GenService<{
+  /**
+   * @generated from rpc user.v1.UserService.GetUser
+   */
+  getUser: {
+    methodKind: "unary";
+    input: typeof GetUserRequestSchema;
+    output: typeof UserSchema;
+  },
+  /**
+   * @generated from rpc user.v1.UserService.UpdateProfile
+   */
+  updateProfile: {
+    methodKind: "unary";
+    input: typeof UpdateProfileRequestSchema;
+    output: typeof UserSchema;
+  },
+  /**
+   * @generated from rpc user.v1.UserService.BlockUser
+   */
+  blockUser: {
+    methodKind: "unary";
+    input: typeof BlockUserRequestSchema;
+    output: typeof EmptySchema;
+  },
+  /**
+   * @generated from rpc user.v1.UserService.DeleteAccount
+   */
+  deleteAccount: {
+    methodKind: "unary";
+    input: typeof EmptySchema;
+    output: typeof EmptySchema;
+  },
+  /**
+   * @generated from rpc user.v1.UserService.SearchUsers
+   */
+  searchUsers: {
+    methodKind: "unary";
+    input: typeof SearchUsersRequestSchema;
+    output: typeof SearchUsersResponseSchema;
+  },
+  /**
+   * @generated from rpc user.v1.UserService.UpdateStatus
+   */
+  updateStatus: {
+    methodKind: "unary";
+    input: typeof StatusUpdateSchema;
+    output: typeof EmptySchema;
+  },
+  /**
+   * @generated from rpc user.v1.UserService.GetOnlineUsers
+   */
+  getOnlineUsers: {
+    methodKind: "unary";
+    input: typeof EmptySchema;
+    output: typeof OnlineUsersResponseSchema;
+  },
+}> = /*@__PURE__*/
+  serviceDesc(file_user_v1_user, 0);
+
