@@ -179,6 +179,34 @@
             <ul>
               
                 <li>
+                  <a href="#user.v1.BlockUserRequest"><span class="badge">M</span>BlockUserRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#user.v1.GetUserRequest"><span class="badge">M</span>GetUserRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#user.v1.OnlineUsersResponse"><span class="badge">M</span>OnlineUsersResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#user.v1.SearchUsersRequest"><span class="badge">M</span>SearchUsersRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#user.v1.SearchUsersResponse"><span class="badge">M</span>SearchUsersResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#user.v1.StatusUpdate"><span class="badge">M</span>StatusUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#user.v1.UpdateProfileRequest"><span class="badge">M</span>UpdateProfileRequest</a>
+                </li>
+              
+                <li>
                   <a href="#user.v1.User"><span class="badge">M</span>User</a>
                 </li>
               
@@ -188,14 +216,18 @@
                 </li>
               
                 <li>
-                  <a href="#user.v1.Status"><span class="badge">E</span>Status</a>
+                  <a href="#user.v1.UserStatus"><span class="badge">E</span>UserStatus</a>
                 </li>
               
                 <li>
-                  <a href="#user.v1.Type"><span class="badge">E</span>Type</a>
+                  <a href="#user.v1.UserType"><span class="badge">E</span>UserType</a>
                 </li>
               
               
+              
+                <li>
+                  <a href="#user.v1.UserService"><span class="badge">S</span>UserService</a>
+                </li>
               
             </ul>
           </li>
@@ -211,6 +243,216 @@
       </div>
       <p></p>
 
+      
+        <h3 id="user.v1.BlockUserRequest">BlockUserRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.v1.GetUserRequest">GetUserRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.v1.OnlineUsersResponse">OnlineUsersResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>users</td>
+                  <td><a href="#user.v1.User">User</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.v1.SearchUsersRequest">SearchUsersRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.v1.SearchUsersResponse">SearchUsersResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>users</td>
+                  <td><a href="#user.v1.User">User</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.v1.StatusUpdate">StatusUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#user.v1.UserStatus">UserStatus</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.v1.UpdateProfileRequest">UpdateProfileRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>username</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bio</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>avatar_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
       
         <h3 id="user.v1.User">User</h3>
         <p></p>
@@ -287,14 +529,14 @@
               
                 <tr>
                   <td>type</td>
-                  <td><a href="#user.v1.Type">Type</a></td>
+                  <td><a href="#user.v1.UserType">UserType</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>status</td>
-                  <td><a href="#user.v1.Status">Status</a></td>
+                  <td><a href="#user.v1.UserStatus">UserStatus</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -352,25 +594,66 @@
           <tbody>
             
               <tr>
-                <td>USER</td>
+                <td>ROLE_UNSPECIFIED</td>
                 <td>0</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>BOT</td>
+                <td>ROLE_USER</td>
                 <td>1</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>MODERATOR</td>
+                <td>ROLE_BOT</td>
                 <td>2</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>DEVELOPER</td>
+                <td>ROLE_MODERATOR</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ROLE_DEVELOPER</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="user.v1.UserStatus">UserStatus</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>USER_STATUS_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>USER_STATUS_HIDDEN</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>USER_STATUS_ONLINE</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>USER_STATUS_OFFLINE</td>
                 <td>3</td>
                 <td><p></p></td>
               </tr>
@@ -378,7 +661,7 @@
           </tbody>
         </table>
       
-        <h3 id="user.v1.Status">Status</h3>
+        <h3 id="user.v1.UserType">UserType</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -387,49 +670,26 @@
           <tbody>
             
               <tr>
-                <td>HIDDEN</td>
+                <td>USER_TYPE_UNSPECIFIED</td>
                 <td>0</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>ONLINE</td>
+                <td>USER_TYPE_NORMAL</td>
                 <td>1</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>OFFLINE</td>
+                <td>USER_TYPE_SPAMMER</td>
                 <td>2</td>
                 <td><p></p></td>
               </tr>
             
-          </tbody>
-        </table>
-      
-        <h3 id="user.v1.Type">Type</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
               <tr>
-                <td>NORMAL</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SPAMMER</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SCAMMER</td>
-                <td>2</td>
+                <td>USER_TYPE_SCAMMER</td>
+                <td>3</td>
                 <td><p></p></td>
               </tr>
             
@@ -440,6 +700,67 @@
       
 
       
+        <h3 id="user.v1.UserService">UserService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetUser</td>
+                <td><a href="#user.v1.GetUserRequest">GetUserRequest</a></td>
+                <td><a href="#user.v1.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateProfile</td>
+                <td><a href="#user.v1.UpdateProfileRequest">UpdateProfileRequest</a></td>
+                <td><a href="#user.v1.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>BlockUser</td>
+                <td><a href="#user.v1.BlockUserRequest">BlockUserRequest</a></td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteAccount</td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SearchUsers</td>
+                <td><a href="#user.v1.SearchUsersRequest">SearchUsersRequest</a></td>
+                <td><a href="#user.v1.SearchUsersResponse">SearchUsersResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateStatus</td>
+                <td><a href="#user.v1.StatusUpdate">StatusUpdate</a></td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>GetOnlineUsers</td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="#user.v1.OnlineUsersResponse">OnlineUsersResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
     
 
     <h2 id="scalar-value-types">Scalar Value Types</h2>
