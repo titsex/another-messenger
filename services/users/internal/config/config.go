@@ -5,17 +5,16 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/spf13/viper"
 	"github.com/titsex/another-messenger/services/users/internal/logger"
-	GormLogger "gorm.io/gorm/logger"
 	"os"
 )
 
 type DatabaseConfig struct {
-	Host     string              `mapstructure:"host"`
-	Port     int                 `mapstructure:"port"`
-	User     string              `mapstructure:"user"`
-	Password string              `mapstructure:"password"`
-	Name     string              `mapstructure:"name"`
-	LogLevel GormLogger.LogLevel `mapstructure:"log_level"`
+	Host     string `mapstructure:"host"`
+	Port     int    `mapstructure:"port"`
+	User     string `mapstructure:"user"`
+	Password string `mapstructure:"password"`
+	Name     string `mapstructure:"name"`
+	LogLevel int    `mapstructure:"log_level"`
 }
 
 type AppConfig struct {
@@ -49,7 +48,11 @@ func Load() {
 
 	err = appConfig.ReadInConfig()
 	if err != nil {
-		logger.Print.Fatal().Err(err).Msg("Error reading app.yaml config file")
+		if _, ok := err.(viper.ConfigFileNotFoundError); ok {
+			logger.Print.Fatal().Msg("app.yaml config file not found")
+		} else {
+			logger.Print.Fatal().Err(err).Msg("Error reading app.yaml config file")
+		}
 	}
 
 	err = appConfig.Unmarshal(&Loaded.App)
@@ -64,7 +67,11 @@ func Load() {
 
 	err = databaseConfig.ReadInConfig()
 	if err != nil {
-		logger.Print.Fatal().Err(err).Msg("Error reading database.yaml config file")
+		if _, ok := err.(viper.ConfigFileNotFoundError); ok {
+			logger.Print.Fatal().Msg("database.yaml config file not found")
+		} else {
+			logger.Print.Fatal().Err(err).Msg("Error reading database.yaml config file")
+		}
 	}
 
 	err = databaseConfig.Unmarshal(&Loaded.Database)

@@ -14,11 +14,7 @@ RUN corepack enable && corepack prepare pnpm@10.7.0 --activate
 
 WORKDIR /application
 
-COPY scripts/* ./scripts/
-RUN chmod +x ./scripts/*
-
 COPY package.json pnpm-lock.yaml ./
-COPY shared/proto shared/proto/
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 ENTRYPOINT ["/bin/bash", "-c", "while true; do sleep 1; done"]

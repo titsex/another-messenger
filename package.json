@@ -4,27 +4,16 @@
 	"author": "titsex",
 	"license": "MIT",
 	"packageManager": "pnpm@10.7.0",
-	"bin": {
-		"install-proto-deps": "./scripts/install-proto-deps.js"
-	},
 	"scripts": {
-		"postinstall": "pnpm install-proto-deps && pnpm buf:generate",
 		"build": "pnpm --recursive --stream build",
 		"start": "pnpm --recursive --stream start",
 		"dev": "pnpm --recursive --stream dev",
 		"format": "biome format . --write",
 		"lint": "biome lint . --write",
-		"install-proto-deps": "node scripts/install-proto-deps.js",
-		"install:proto-deps": "./scripts/install-protoc-gen.sh",
-		"install:proto-deps:win": "pwsh scripts/install-protoc-gen.ps1",
-		"buf:generate": "buf generate --template shared/proto/buf.gen.yaml",
 		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@bufbuild/buf": "^1.51.0",
-		"@bufbuild/protoc-gen-connect-es": "^0.13.0",
-		"@bufbuild/protoc-gen-es": "^2.2.5",
 		"husky": "^9.1.7"
 	}
 }
