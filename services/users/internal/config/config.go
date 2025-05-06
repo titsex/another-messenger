@@ -1,20 +1,20 @@
 package config
 
 import (
+	"os"
+
 	"github.com/joho/godotenv"
 	"github.com/rs/zerolog"
 	"github.com/spf13/viper"
 	"github.com/titsex/another-messenger/services/users/internal/logger"
-	"os"
 )
 
 type DatabaseConfig struct {
 	Host     string `mapstructure:"host"`
 	Port     int    `mapstructure:"port"`
-	User     string `mapstructure:"user"`
+	Username     string `mapstructure:"username"`
 	Password string `mapstructure:"password"`
-	Name     string `mapstructure:"name"`
-	LogLevel int    `mapstructure:"log_level"`
+	Database     string `mapstructure:"database"`
 }
 
 type AppConfig struct {

@@ -3,9 +3,9 @@
 
 host: "localhost"
 port: 5432
-user: "postgres"
+username: "postgres"
 password: "postgres"
-name: "another-messenger-users"
+database: "another-messenger-users"
 
 log_level: 4 # Available log levels:
 # 1 - SILENT (disable logging)
